@@ -1,11 +1,12 @@
 import React from "react";
 import Navbar from "../components/Navbar";
+import Blogs from "./Blogs";
+import Bookmarks from "./Bookmarks";
 
 const Home = () => {
   return (
     <div>
-      <Navbar />
-      <h1>Home page</h1>
+      <h1>this is the home page</h1>
     </div>
   );
 };

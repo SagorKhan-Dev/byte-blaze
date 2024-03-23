@@ -11,7 +11,6 @@ const Navbar = () => {
       setTheme("light");
     }
   };
-  
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
@@ -34,8 +33,8 @@ const Navbar = () => {
           <li className="flex">
             <NavLink
               rel="noopener noreferrer"
-              href="#"
-              className="flex items-center font-bold text-xl "
+              to="/"
+              className="font-bold text-xl"
             >
               Home
             </NavLink>
@@ -43,8 +42,8 @@ const Navbar = () => {
           <li className="flex">
             <NavLink
               rel="noopener noreferrer"
-              href="#"
-              className="flex items-center font-bold text-xl "
+              to="/blogs"
+              className="font-bold text-xl"
             >
               Blogs
             </NavLink>
@@ -52,8 +51,8 @@ const Navbar = () => {
           <li className="flex">
             <NavLink
               rel="noopener noreferrer"
-              href="#"
-              className="flex items-center font-bold text-xl "
+              to="/bookmarks"
+              className="font-bold text-xl"
             >
               Bookmark
             </NavLink>
