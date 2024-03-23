@@ -34,7 +34,11 @@ const Navbar = () => {
             <NavLink
               rel="noopener noreferrer"
               to="/"
-              className="font-bold text-xl"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary text-xl font-bold"
+                  : "font-bold text-xl"
+              }
             >
               Home
             </NavLink>
@@ -43,7 +47,11 @@ const Navbar = () => {
             <NavLink
               rel="noopener noreferrer"
               to="/blogs"
-              className="font-bold text-xl"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary text-xl font-bold"
+                  : "font-bold text-xl"
+              }
             >
               Blogs
             </NavLink>
@@ -52,7 +60,11 @@ const Navbar = () => {
             <NavLink
               rel="noopener noreferrer"
               to="/bookmarks"
-              className="font-bold text-xl"
+              className={({ isActive }) =>
+                isActive
+                  ? "text-primary text-xl font-bold"
+                  : "font-bold text-xl"
+              }
             >
               Bookmark
             </NavLink>
