@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 
 const Navbar = () => {
+  const [theme, setTheme] = useState("light");
+
+  const handleToggle = (e) => {
+    if (e.target.checked) {
+      setTheme("dark");
+    } else {
+      setTheme("light");
+    }
+  };
+
+  useEffect(() => {
+    localStorage.setItem("theme", theme);
+    const localTheme = localStorage.getItem("theme");
+
+    document.querySelector("html").setAttribute("data-theme", localTheme);
+  }, [theme]);
   return (
-    <header className="py-4 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
+    <header className="py-4 sticky z-10 shadow-[0px_0px_0px_1px_rgba(0,0,0,0.06),0px_1px_1px_-0.5px_rgba(0,0,0,0.06),0px_3px_3px_-1.5px_rgba(0,0,0,0.06),_0px_6px_6px_-3px_rgba(0,0,0,0.06),0px_12px_12px_-6px_rgba(0,0,0,0.06),0px_24px_24px_-12px_rgba(0,0,0,0.06)]">
       <div className="container flex justify-between items-center h-16 mx-auto">
         <Link
           rel="noopener noreferrer"
@@ -45,9 +61,9 @@ const Navbar = () => {
             <label className="swap swap-rotate">
               {/* this hidden checkbox controls the state */}
               <input
+                onChange={handleToggle}
                 type="checkbox"
                 className="theme-controller"
-                value="synthwave"
               />
 
               {/* sun icon */}
