@@ -11,6 +11,7 @@ const Navbar = () => {
       setTheme("light");
     }
   };
+  
 
   useEffect(() => {
     localStorage.setItem("theme", theme);
